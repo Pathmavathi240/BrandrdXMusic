@@ -137,11 +137,9 @@ async def start_pm(client, message: Message, _):
         
 
         
-        if await is_on_off(config.LOG):
-            sender_id = message.from_user.id
-            sender_name = message.from_user.first_name
+        if await is_on_off(2):
             return await app.send_message(
-                config.LOG_GROUP_ID,
+                chat_id=config.LOGGER_ID,
                 f"{message.from_user.mention} ʜᴀs sᴛᴀʀᴛᴇᴅ ʙᴏᴛ. \n\n**ᴜsᴇʀ ɪᴅ :** {sender_id}\n**ᴜsᴇʀ ɴᴀᴍᴇ:** {sender_name}",
             )
 
