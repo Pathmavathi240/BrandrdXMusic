@@ -124,13 +124,13 @@ async def start_pm(client, message: Message, _):
                     message.chat.photo.big_file_id,
                 )
 
-        await lols.delete()
-        await m.delete()
-        await message.reply_photo(
-            photo=config.START_IMG_URL,
-            caption=_["start_2"].format(message.from_user.mention, app.mention),
-            reply_markup=InlineKeyboardMarkup(out),
-        )
+            await lols.delete()
+            await m.delete()
+            await message.reply_photo(
+                photo=config.START_IMG_URL,
+                caption=_["start_2"].format(message.from_user.mention, app.mention),
+                reply_markup=InlineKeyboardMarkup(out),
+            )
 
         except Exception as e:
             print(f"Start command error: {e}")
