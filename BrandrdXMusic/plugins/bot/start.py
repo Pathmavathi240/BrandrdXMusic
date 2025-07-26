@@ -131,6 +131,12 @@ async def start_pm(client, message: Message, _):
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
+
+        except Exception as e:
+            print(f"Start command error: {e}")
+        
+
+        
         if await is_on_off(config.LOG):
             sender_id = message.from_user.id
             sender_name = message.from_user.first_name
