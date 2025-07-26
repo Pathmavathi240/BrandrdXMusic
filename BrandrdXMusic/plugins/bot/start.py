@@ -123,18 +123,11 @@ async def start_pm(client, message: Message, _):
                 userss_photo = await app.download_media(
                     message.chat.photo.big_file_id,
                 )
-            else:
-                userss_photo = "assets/circle.png"
-            if userss_photo:
-                chat_photo = userss_photo
-            chat_photo = userss_photo if userss_photo else START_IMG_URL
 
-        except AttributeError:
-            chat_photo = "assets/circle.png"
         await lols.delete()
         await m.delete()
         await message.reply_photo(
-            photo=chat_photo,
+            photo=config.START_IMG_URL,
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
