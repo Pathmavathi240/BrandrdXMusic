@@ -112,17 +112,8 @@ async def start_pm(client, message: Message, _):
             await lols.edit_text("**⚡ѕтαятιиg**")
             await asyncio.sleep(0.1)
             await lols.edit_text("**⚡ѕтαятιиg.**")
-
-            await lols.edit_text("**⚡ѕтαятιиg....**")
-
             await lols.edit_text("**⚡ѕтαятιиg.**")
             await lols.edit_text("**⚡ѕтαятιиg....**")
-            m = await message.reply_sticker("CAACAgUAAxkBAAEQI1BlTLmx7PtOO3aPNshEU2gCy7iAFgACNQUAApqMuVeA6eJ50VbvmDME")
-            if message.chat.photo:
-
-                userss_photo = await app.download_media(
-                    message.chat.photo.big_file_id,
-                )
 
             await lols.delete()
             await m.delete()
